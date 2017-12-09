@@ -1,11 +1,15 @@
-import debug from 'debug';
-
 import { setupCommandLine } from './command';
-
-const log = debug('NodeVultr:Index');
 
 try {
   setupCommandLine();
 } catch (error) {
-  log(error);
+  throw new Error(error);
 }
+
+process.on('uncaughtException', (error) => {
+  throw new Error(error);
+});
+
+process.on('uncaughtRejection', (error) => {
+  throw new Error(error);
+});

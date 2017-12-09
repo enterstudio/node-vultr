@@ -11,7 +11,6 @@
     "test:security": "node ./node_modules/nsp/bin/nsp check --reporter checkstyle --output summary",
     "build": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors",
     "start": "node ./lib/lib.js",
-    "start:dev": "DEBUG=* node ./lib/lib.js",
     "preversion": "git checkout master",
     "postversion": "git push origin master && git push origin master --tags"
   },
